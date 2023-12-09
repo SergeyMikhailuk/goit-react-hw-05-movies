@@ -1,16 +1,9 @@
-const App = () => {
-  return (
-    <>
-      <h1>Movies</h1>
-    </>
-  );
-};
+import { RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
+
+import routing from 'containers/routes';
+
+const router = createBrowserRouter(createRoutesFromElements(routing()));
+
+const App = () => <RouterProvider router={router} />;
 
 export default App;
-
-export type ImageResponse = {
-  id: number;
-  webformatURL: string;
-  largeImageURL: string;
-  tags: string;
-};
